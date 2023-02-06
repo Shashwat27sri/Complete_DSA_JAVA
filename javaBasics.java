@@ -554,3 +554,50 @@ public class javaBacics{
 		System.out.print(bino);
 	}
 }
+
+	
+	
+
+import java.util.*;                                              // Binary to Decimal
+public class javaBasics{
+
+        public static void binDec(int n){
+                int deci=0;
+                for (int i=0;n>0;i++){
+                        int last=n%10;
+                        deci=deci+(int)(last*Math.pow(2,i));
+                        n=n/10;
+                        
+                }
+                System.out.print(deci);
+        }
+
+        public static void main(String args[]){
+                Scanner sc=new Scanner(System.in);
+                int n=sc.nextInt();
+                binDec(n);
+        }
+}
+	
+	
+
+import java.util.*;                                              // Decimal to Binary
+public class javaBasics{
+
+        public static void decBin(int n){
+                int deci=0;
+                for (int i=0;n>0;i++){
+                        int last=n%2;
+                        deci=deci+(int)(last*Math.pow(10,i));
+                        n=n/2;
+                        
+                }
+                System.out.print(deci);
+        }
+
+        public static void main(String args[]){
+                Scanner sc=new Scanner(System.in);
+                int n=sc.nextInt();
+                decBin(n);
+        }
+}
