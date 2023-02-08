@@ -789,3 +789,77 @@ public class javaBasics{
     }
   }         
 }  
+
+	
+
+import java.util.*;                 //diamond
+public class javaBasics{
+  public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    for (int i=1;i<=n;i++){
+      for(int j=1;j<=(n-i);j++){
+        System.out.print(" ");
+      }
+      for(int j=1;j<=(2*i)-1;j++){
+        System.out.print("*");
+      }
+      System.out.println();
+    }
+    
+    
+    for (int i=n;i>=1;i--){
+      for(int j=1;j<=(n-i);j++){
+        System.out.print(" ");
+      }
+      for(int j=1;j<=(2*i)-1;j++){
+        System.out.print("*");
+      }
+      System.out.println();
+    }
+  }
+}
+  
+  
+  
+  
+             //-------------ARRAYS--------------
+
+
+
+
+            
+import java.util.*;
+public class javaBasics{
+    public static void main(String args[]){
+        Scanner sc=new Scanner(System.in);
+                                                                //creation of arrays
+        int marks[]=new int[50];
+        int numbers[]={2,4,5};
+        int digits={6,7,8,9,6,42,4};
+        String fruits={"apple","banana","grapes"};
+
+
+                                                                //insertion of elements in array
+
+        int marks[]=new int[10];
+        System.out.print("Enter physics marks");
+        marks[0]=sc.nextInt();
+        System.out.print("Enter maths marks");
+        marks[1]=sc.nextInt();
+        
+        
+        System.out.println("physics marks:"+marks[0]);
+        System.out.println("maths marks:"+marks[1]);
+        
+        marks[0]=38;
+        System.out.println("physics marks:"+marks[0]);
+
+        int percentage=(marks[0]+marks[1])/2;
+        System.out.print("percentage: "+percentage+"%");
+
+
+        System.out.print("length of array: "+marks.length);         // Calculating length of an array
+    }
+}
+
