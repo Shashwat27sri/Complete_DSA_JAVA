@@ -13,3 +13,5 @@ A wholesome repository having all the major concepts of  DSA...
 9. Binomial Coefficient  ->                                       line(539-556)
 10. Binary to Decimal ->                                          line(561-579)
 11. Decimal to Binary  ->                                         line(581-603)
+12. Anvanced pattern questions ->                                 line(607-821)
+13. biginning with array ->                                       lilne()
