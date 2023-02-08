@@ -1,6 +1,7 @@
 # Complete_DSA_JAVA
 A wholesome repository having all the major concepts of  DSA...
 
+File - javaBasics.java 
 
 1. Some loops, nested loops and switch case understanding ->      line(162-252)
 2. Calculator ->                                                  line(256-280)
@@ -14,4 +15,4 @@ A wholesome repository having all the major concepts of  DSA...
 10. Binary to Decimal ->                                          line(561-579)
 11. Decimal to Binary  ->                                         line(581-603)
 12. Anvanced pattern questions ->                                 line(607-821)
-13. biginning with array ->                                       lilne()
+13. biginning with array ->                                       lilne(826-864)
