@@ -601,3 +601,191 @@ public class javaBasics{
                 decBin(n);
         }
 }
+
+	
+	
+/*-------------------------------
+---------------------------------
+ADVANCED PATTERN QUESTIONS
+---------------------------------
+---------------------------------*/
+	
+	
+import java.util.*;                                // hollow rectangle
+public class javaBasics{
+	public static void main (String args[]){
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+		for (int i=1;i<=n;i++){
+			for (int j=1;j<=n;j++){
+				if (i==1||i==n||j==1||j==n){
+					System.out.print("*");
+				}
+				else{
+					System.out.print(" ");
+
+				}
+			}
+			System.out.println();
+		}
+	}
+}
+
+
+
+import java.util.*;                   //reverse pyramid
+public class javaBasics{
+	public static void main(String args[]){
+		Scanner sc=new Scanner(System.in);
+		int n=sc.nextInt();
+
+		for (int i=1;i<=n;i++){
+			for (int j=1;j<=(n-i);j++){
+				System.out.print(" ");
+			}
+      for(int j=1;j<=i;j++){
+        System.out.print("*");
+      }
+      System.out.println();
+		}
+    
+	}
+}
+
+
+
+import java.util.*;                        //upside down pyramid column
+public class javaBasics{
+  public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    for (int i=1;i<=n;i++){
+      for (int j=1;j<=(n-i+1);j++){
+        System.out.print(j);
+      }
+      System.out.println();
+    }
+  } 
+}
+
+
+import java.util.*;                   //FLOYD'S triangle
+public class javaBascics{
+  public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    int k=1;
+    for (int i=1;i<=n;i++){
+      for (int j=1;j<=i;j++){
+        
+        System.out.print(k);
+        k=k+1;
+
+      }
+      System.out.println();
+    }
+  }
+}
+
+
+import java.util.*;              //0-1 Triangle
+public class javaBascics{
+  public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    for(int i=1;i<=n;i++){
+      for (int j=1;j<=i;j++){
+        int sum=i+j;
+        if (sum%2==0){
+          System.out.print("1");
+
+        }else{
+        System.out.print("0");}
+      }
+      System.out.println();
+    }
+  }
+}
+
+
+import java.util.*;                     //butterfly pattern
+public class javaBascics{
+  public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+
+    //upper half
+
+    for (int i=1;i<=n;i++){
+      for (int j=1;j<=i;j++){
+        System.out.print("*");
+      }
+      for(int j=1;j<=2*(n-i);j++){
+        System.out.print(" ");
+      }
+      for (int j=1;j<=i;j++){
+        System.out.print("*");
+      }
+      System.out.println();
+    }
+
+    //lower half
+
+    for (int i=n;i>=1;i--){
+      for (int j=1;j<=i;j++){
+        System.out.print("*");
+      }
+      for(int j=1;j<=2*(n-i);j++){
+        System.out.print(" ");
+      }
+      for (int j=1;j<=i;j++){
+        System.out.print("*");
+      }
+      System.out.println();
+    }
+  }
+}
+
+
+import java.util.*;                                 //solid rhombus
+public class javaBasics{
+  public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    for (int i=1;i<=n;i++){
+      for (int j=1;j<=(n-i);j++){
+        System.out.print(" ");
+      }
+      for (int j=1;j<=n;j++){
+        System.out.print("*");
+      }
+      System.out.println();
+    }
+  }
+}
+
+
+
+import java.util.*;                                 //hollow rhombus
+public class javaBasics{
+  public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int n=sc.nextInt();
+    for (int i=1;i<=n;i++){
+      for (int j=1;j<=(n-i);j++){
+        System.out.print(" ");
+      }
+      for(int j=1;j<=n;j++){
+        if (i==1||i==n||j==1||j==n){
+          System.out.print("*");
+        }
+        else{
+          System.out.print(" ");
+        }
+
+      }
+      System.out.println();
+
+    }
+  }         
+}  
