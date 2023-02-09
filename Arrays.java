@@ -121,7 +121,7 @@ public class Arrays{
 
   public static void main(String args[]){
     Scanner sc=new Scanner(System.in);
-    int arr[]={2,4,6,7,8,9,11,23,45};     //we need sorted array
+    int arr[]={2,4,6,7,8,9,11,23,45};                        //we need sorted array
     System.out.print("enter value to find");
     int n=sc.nextInt();
     int val=binarySearch(arr,n,0,arr.length-1);
@@ -164,13 +164,52 @@ public class Arrays{
 }
 
 
-//--------------pair of array------------
-
-import java.util.*;
+import java.util.*;                        //pair in arrays 
 public class Arrays{
+
+  public static void subArray(int arr[]){
+    int count=0;
+    for (int i=0;i<arr.length;i++){
+      
+      for (int j=i+1;j<arr.length;j++){
+        System.out.print("("+arr[i]+","+arr[j]+")");
+        count++;
+      }
+      System.out.println();
+    }
+    System.out.print("no. of subArrays: "+count);
+  }
+
   public static void main(String args[]){
     Scanner sc=new Scanner(System.in);
 
-    
+    int arr[]={2,4,6,8,10};
+    subArray(arr);
   }
 }
+
+
+import java.util.*;                            //print all sub arrays          
+public class Arrays{
+  public static void printSubArray(int arr[]){
+    int count=0;
+    for (int i=0;i<arr.length;i++){
+      for (int j=i;j<arr.length;j++){
+        for(int k=i;k<=j;k++){
+          System.out.print(arr[k]+" ");
+          count++;
+        }
+        System.out.println();
+      }
+      System.out.println();
+    }
+    System.out.println("Total no of sub arrays: "+count);
+
+  }
+  public static void main(String args[]){
+    int arr[]={2,4,6,8,10};
+    printSubArray(arr);
+  }
+}
+
+
