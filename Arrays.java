@@ -213,3 +213,285 @@ public class Arrays{
 }
 
 
+
+// max subarraysum-1(BRUTE force)   complexity O(n^3)
+
+import java.util.*;
+public class Arrays{
+  public static void maxsubarraysum(int arr[]){
+    int currsum=0;
+    int maxsum=Integer.MIN_VALUE;
+    for (int i=0;i<arr.length;i++){
+      for(int j=i;j<arr.length;j++){
+        currsum=0;
+        for (int k=i;k<=j;k++){
+          currsum+=arr[k];
+        }
+        System.out.println(currsum);
+        if(maxsum<currsum){
+          maxsum=currsum;
+        }
+      }
+    }
+    System.out.print("max Sum is:"+maxsum);
+  }
+
+
+  public static void main(String args[]){
+    int arr[]={2,4,6,8,10};
+    maxsubarraysum(arr);
+  }
+  
+// }
+
+
+
+//MaxSubarray Sum-2 Prefix array   complexity -O(n^2)
+
+import java.util.*;
+public class Arrays{
+
+  public static void maxsubarray(int numbers[]){
+      int currsum=0;
+      int maxsum=Integer.MIN_VALUE;
+      int prefix[]=new int[numbers.length];
+
+      prefix[0]=numbers[0];
+      // calculate prefix array
+      for(int i=1;i<prefix.length;i++){
+      prefix[i]=prefix[i-1]+numbers[i];
+      }
+      for(int i=0;i<numbers.length;i++){
+        int start=i;
+        for(int j=i;j<numbers.length;j++){
+          int end=j;
+          currsum= start==0? prefix[end]: prefix[end]-prefix[start-1];
+          if(maxsum<currsum){
+            maxsum=currsum;
+          }
+        }
+      }
+      System.out.println("max sum =" + maxsum);
+
+    }
+    public static void main(String args[]){
+    int arr[]={-2,-3,4,-1,-2,1,5,-3};
+    maxsubarray(arr);
+  } 
+}
+
+
+
+import java.util.*;                                        //kadanes algo   max sum subarray-3   complexity-O(n)
+
+  public class Arrays{
+    public static void kadanes(int arr[]){
+    int maxsum=Integer.MIN_VALUE;
+    int currsum=0;
+    for(int i=0;i<arr.length;i++){
+      currsum=currsum+arr[i];
+      if(currsum<0){
+        currsum=0;
+
+      }
+      maxsum=Math.max(currsum,maxsum);
+    }
+    System.out.print("oour max subarray sum is: "+maxsum);
+  }
+
+  public static void main(String args[]){
+    int arr[]={-2,-3,4,-1,-2,1,5,-3};
+    kadanes(arr);
+  } 
+}
+
+
+
+
+
+
+//--------------------------------------------------------sorting ---------------------
+
+
+//------------------------------------------------------------------------------------
+
+
+
+
+
+// ----------------------2D arrays------------------------
+
+
+import java.util.*;
+public class Arrays{
+  public static void matrix(int r,int c){
+    Scanner sc=new Scanner(System.in);
+    int matrics[][]=new int[r][c];                     // taking input in 2d array
+    int n=matrics.length,  m=matrics[0].length;       //n has row length ,m has column length
+    for (int i=0;i<n  /*row length */;i++){
+      for(int j=0;j<m  /*colunm length */;j++){
+        matrics[i][j]=sc.nextInt();
+      }
+    } 
+    for(int i=0;i<n;i++){                       // printing of matrics elements
+
+      for (int j=0;j<m;j++){
+        System.out.print(matrics[i][j]+" ");
+      }
+      System.out.println();
+    }
+  }
+  public static void main(String args[]){
+    Scanner sc=new Scanner(System.in);
+    int r=sc.nextInt();
+    int c=sc.nextInt(); 
+    matrix(r,c);
+  }
+}
+
+
+
+
+// ----------------------- spiral matric
+
+
+import java.util.*;
+public class Arrays{
+  public static void spiral(int arr[][]){
+    int startrow=0;
+    int startcol=0;
+    int endrow=arr.length-1;
+    int endcol= arr[0].length-1;
+    while(startrow<=endrow && startcol<=endcol){
+      //for top
+      for(int j=startcol;j<=endcol;j++){
+        System.out.print(arr[startrow][j]+" ");
+      }
+
+      //for right
+      for(int i=startrow+1;i<=endrow;i++){
+        System.out.print(arr[i][endcol]+" ");
+      }
+
+      //for bottom
+      for(int j=endcol-1;j>=startcol;j--){
+        System.out.print(arr[endrow][j]+" ");
+        if(startrow==endrow){
+          break;
+        }
+      }
+
+      //for left
+      for(int i=endrow-1;i>=startrow+1;i--){
+        System.out.print(arr[i][startcol]+" ");
+        if(startcol==endcol){
+          break;
+        }
+      }
+      startrow++;
+      startcol++;
+      endrow--;
+      endcol--;
+    }
+    System.out.println();
+  }
+  public static void main(String args[]){
+    int arr[][]={{1,2,3,4},
+                {5,6,7,8},
+                {9,10,11,12},
+                {13,14,15,16}};
+    spiral(arr);
+  }
+}
+
+
+
+
+//---------------diagonal sum
+
+
+import java.util.*;
+public class Arrays{
+  public static void diagonalsum(int arr[][]){
+    
+    
+    
+    int sum=0;                   //--------not a optimised approch complexity O(n^2)
+    for (int i=0;i<arr.length;i++){
+      for (int j=0;j<arr[0].length;j++){
+        if(i==j){
+          sum+=arr[i][j];
+        }
+        else if(i+j==arr.length-1){ //secondary diagonal condition
+          sum+=arr[i][j];
+        }
+      }
+    }
+    System.out.print( sum);
+
+
+
+
+//     //--------optimised way     complexity O(n)
+
+    int sum=0;
+    for (int i=0;i<arr.length;i++){
+      //primary diagonal
+      sum+=arr[i][i];             //jaha jaha row column same vo sum me add
+      //secondary diagonal
+      if (i!=arr.length-1-i){
+        sum+=arr[i][arr.length-1-i];   // 
+      }
+    }
+    System.out.print( sum);
+    
+  }
+  public static void main(String args[]){
+    int arr[][]={{1,2,3,4,2},
+                {5,6,7,8,3},
+                {9,10,11,12,5},
+                {13,14,15,16,7},
+                {17,18,19,20,1}};
+    diagonalsum(arr);
+  }
+}
+
+
+
+
+
+//------------search in 2d array                                    //starircase method
+
+import java.util.*;
+public class Arrays{
+  public static boolean staircaseSearch(int arr[],int key){
+    int row=0;
+    int col=arr[0].length-1;
+
+    while(row<arr.length && col>=0){
+      if(arr[row][col]==key){
+        System.out.println("found key at ("+ row + "," +col+")");
+        return true;
+      }
+      else if(key <arr[row][col]){
+        col--;
+      }
+      else{
+        row++;
+      }
+    }
+    System.out.println("key not found!");
+    return false;
+  }
+
+  public static void main(String args[]){
+    int arr[][]={{1,2,3,4,2},
+                 {5,6,7,8,3},
+                 {9,10,11,12,5},
+                 {13,14,15,16,7},
+                 {17,18,19,20,1}};
+    int key=18;
+    staircaseSearch(arr,key);
+  }
+}
+
