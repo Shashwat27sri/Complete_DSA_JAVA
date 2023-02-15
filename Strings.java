@@ -16,17 +16,12 @@ public class Strings{
     System.out.print(name);
     String fullname=sc.nextLine();     //take full name or line as integer does not terminate at 'spaces'.
     System.out.print(fullname);
-    it breaks when 'space' encountered      "shashwat srivastva" only "shashwat"  is printed.
+    //it breaks when 'space' encountered      "shashwat srivastva" only "shashwat"  is printed.
 
 
 
     String fullName="shashwat srivastava";
-    System.out.print(fullName.length());      //Inbuilt function to calculate length of string
-
-    in array .length is a property and here it is an in built function.. 
-
-
-    concatenation of string
+    System.out.print(fullName.length());      //Inbuilt function to calculate length of string in array .length is a property and here it is an in built function.. concatenation of string
 
 
     String firstName="shashwat";
@@ -50,7 +45,7 @@ public class Strings{
 }
 
 
---------------------checkwhether a string is palindrome or not
+//--------------------checkwhether a string is palindrome or not
 
 
 import java.util.*;
