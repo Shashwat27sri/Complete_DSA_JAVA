@@ -304,6 +304,86 @@ import java.util.*;                                        //kadanes algo   max 
     kadanes(arr);
   } 
 }
+  
+  
+  
+//----------------------------- TRAPPING WATER ---------------- O(n)
+
+
+
+public class Arrays{
+
+  public static int trappingWater(int height[]){
+
+    int n=height.length;
+    //calculate left max boundary - helping array
+    int leftMax[]=new int[n];
+    leftMax[0]=height[0];
+    for (int i=1;i<n;i++){
+      leftMax[i]=Math.max(height[i], leftMax[i-1]);
+    }
+    //calculate right max boundary - helping array
+    int rightMax[]=new int [n];
+    rightMax[n-1]=height[n-1];
+    for (int i=n-2;i>=0;i--){
+      rightMax[i]=Math.max(height[i], rightMax[i+1]);
+
+    }
+
+    int trappedwater=0;
+    int width=1;
+    //loop-
+    for (int i=0;i<n;i++){
+      //waterlevel=min(left boundary ,right boundary)
+      int waterlevel=Math.min(leftMax[i], rightMax[i]);
+
+      //trappedwater =wtaerlevel-heigth[i]+width(1)
+      trappedwater += waterlevel-height[i]* width; 
+    }
+    
+    return trappedwater;
+
+  }
+
+  public static void main(String args[]){
+    int height[]={4,2,0,6,3,2,5};
+    System.out.print(trappingWater(height));
+  }
+}
+
+
+
+
+
+
+
+
+//----------------------- buy and sell stock ---------  complexity-O(n)
+
+
+public class Arrays{
+  public static int buyAndsellStocks(int prices[]){
+    int buyPrice=Integer.MAX_VALUE;
+    int maxProfit=0;
+
+    for (int i=0;i<prices.length;i++){
+      if (buyPrice < prices[i]){          //----profit
+        int profit = prices[i ]-buyPrice;                //--------today's profit
+        maxProfit = Math.max(maxProfit,profit);
+      } else{
+        buyPrice=prices[i];        //update buyprice 
+      }
+    }
+    return maxProfit;
+  } 
+  
+  public static void main(String args[]){
+    int prices[]={7,1,5,3,6,4};
+    System.out.print("Maximum Profit: "+buyAndsellStocks(prices));
+  }
+}
+
+
 
 
 
@@ -311,6 +391,70 @@ import java.util.*;                                        //kadanes algo   max 
 
 
 //--------------------------------------------------------sorting ---------------------
+
+  
+  
+  
+public class Arrays{                                            //bubble sort
+  public static void bubbleSort(int arr[]){
+    for (int i=0;i<arr.length-1;i++){
+      for (int j=0;j<arr.length-i-1;j++){
+        if (arr[j]>arr[j+1]){
+          //swap
+          int temp=arr[j];
+          arr[j]=arr[j+1];
+          arr[j+1]=temp;
+          
+        }
+
+      }
+    }
+    for (int i=0;i<arr.length;i++){
+      System.out.print(arr[i] +" ");
+    }
+    
+    
+  }
+
+  public static void main(String args[]){
+    int arr[]={2,4,1,3,5};
+    bubbleSort(arr);
+  }
+}
+
+
+
+  
+  
+public class Arrays{                                        //-------------optimized bubble sort
+
+  public static void optimizedBubble(int arr[]){               
+    for(int i=0;i<arr.length-1;i++){
+      boolean Swapped=false;
+      for (int j=0;j<arr.length-i-1;j++){
+        if (arr[j]>arr[j+1]){
+          //swap
+          int temp=arr[j];
+          arr[j]=arr[j+1];
+          arr[j+1]=temp;
+          Swapped=true;
+        }
+        
+      }
+      if (Swapped==false){
+        break;
+      }
+    }
+    for (int  i=0;i<arr.length;i++){
+      System.out.print(arr[i]+" "); 
+    }
+  }
+
+  public static void main(String args[]){
+    int arr[]={2,4,3,5,1};
+    optimizedBubble(arr);
+  }
+}
 
 
 //------------------------------------------------------------------------------------
