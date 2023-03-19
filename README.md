@@ -15,4 +15,4 @@ File - javaBasics.java
 10. Binary to Decimal ->                                          line(561-579)
 11. Decimal to Binary  ->                                         line(581-603)
 12. Anvanced pattern questions ->                                 line(607-821)
-13. biginning with array ->                                       lilne(826-864)
+13. begining with array ->                                       lilne(826-864)
