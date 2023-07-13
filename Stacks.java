@@ -147,6 +147,12 @@ public class Stacks{
   
 
 
+
+
+
+
+  
+
   public static String reverseString(String str){                        //reversing the string using Stack
     Stack<Character> s =new Stack<>();
     int idx= 0;
@@ -173,6 +179,45 @@ public class Stacks{
   }
 
 
+
+
+  public static void placeAtBottom(Stack<Integer> s, int data){                           //reverse a Stack
+    if (s.isEmpty()){
+      s.push(data);
+      return;
+    }
+
+    int top = s.pop();
+    placeAtBottom(s,data);
+    s.push(top);
+  }
+
+  public static void reverseStack(Stack<Integer> s){
+    if (s.isEmpty()){
+      return;
+    }
+    int top = s.pop();
+    reverseStack(s);
+    placeAtBottom(s, top);
+
+  }
+  public static void printStack(Stack<Integer> s){
+    while (!s.isEmpty()){
+      System.out.println(s.pop());
+
+    }
+  }
+  public static void main(String args[]){
+    Stack<Integer> s = new Stack<>();
+    s.push(1);
+    s.push(2);
+    s.push(3);
+
+    // oringinal printing 3,2,1 but after reversing 
+    reverseStack(s);
+    printStack(s);              // it gives us 1,2,3
+
+  }
 
 
 }
